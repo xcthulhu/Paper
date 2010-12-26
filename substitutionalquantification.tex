@@ -1,13 +1,33 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt,a4paper]{article}
 
-\usepackage{ ifpdf, geometry, amsmath, graphicx, amssymb, setspace}
+\usepackage{ifpdf, amsmath, graphicx, amssymb, setspace}
+
+% Geometry; change to suite preference
+%\usepackage[a4paper,margin=.9in]{geometry}
+\usepackage[a4paper,margin=.5in,right=2in]{geometry}
+\setlength{\leftmargin}{2in}
+
+% Spacing; don't use \begin{doublespace} with todonotes ~Matt
+\usepackage{setspace}
+\doublespacing
+
 %\usepackage[authoryear]{natbib}
-\usepackage{todonotes}
+
+% Todo notes
+\usepackage[colorlinks]{hyperref}
+\usepackage[colorinlistoftodos,textwidth=1.75in]{todonotes}
+\newcommand{\rewrite}[2][]
+{\todo[caption={#2}, color=green!40, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+\newcommand{\error}[2][]
+{\todo[caption={#2}, color=red!40, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+\newcommand{\intodo}[2][]
+{\todo[caption={#2}, inline, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+
+
 \usepackage{epigraph}
 %\bibliographystyle{plainnat}
 \bibliographystyle{plain}
-\geometry{a4paper} 
-\geometry{margin=.9in}
+
 
 \newenvironment{te}
 {\begin{singlespace}
@@ -19,6 +39,8 @@
 \ignorespacesafterend}
 
 \begin{document}
+\listoftodos\pagebreak
+\intodo{Are you sure that you want to put the date here?}
 \begin{minipage}{0.5\textwidth}
 \begin{flushleft}
 \large{To Be The Value Of A Variable Is Not Always To Be.}\\
@@ -38,7 +60,7 @@ May 8th, 2008
   just as if it were expressly designed to mislead philosophers.}%
   {G. E. Moore \cite[p.217]{moore}}
 
-\begin{doublespace}
+%\begin{doublespace}
 
   As Quine has characterized it, the central question of ontology is
   ``what is there?"; its solution, ``everything"
@@ -49,7 +71,13 @@ May 8th, 2008
   variable'' \cite[p.15]{quine}.  Corresponding to this
   thesis is an appropriate methodology: ontological disagreements are
   to be resolved as semantic disputes over the implications of a
-  theory's constituent statements.  An interlocutor is taken to be
+  theory's constituent statements. 
+  \rewrite[caption={Comment about run-on sentences}]{\textbf{This paper is really good}, but you have
+    run on sentences. This sentence here is a little long but I don't
+    see how to change it.  I'm going to try to break them up when I
+    see them, and you can review and decide if my rewording sounds
+    awkward.}
+  An interlocutor is taken to be
   ontologically committed to an entity $x$ if a sentence of the form
   ``there exists an $x$''---a sentence whose truth is supposed to
   demand some \emph{thing}, $x$---can be deduced from her disputed
@@ -667,7 +695,7 @@ identity.  This and similar programs seem much more sensible
 approaches to ontological disputes if the latter are to continue at
 all.
 
-\end{doublespace}
+%\end{doublespace}
 
 \newpage
 
