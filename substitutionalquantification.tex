@@ -16,6 +16,8 @@
 % Todo notes
 \usepackage[colorlinks]{hyperref}
 \usepackage[colorinlistoftodos,textwidth=1.75in]{todonotes}
+\newcommand{\otodo}[2][]
+{\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
 \newcommand{\rewrite}[2][]
 {\todo[caption={#2}, color=green!40, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
 \newcommand{\error}[2][]
@@ -95,14 +97,20 @@ disputes in the analytic tradition.  Yet this notion of commitment is
 dependent upon a referential semantics for the existential quantifier
 of first-order logic.  Consider the transition from line two to three
 in (\ref{arg1}). This move is valid only if truth is model
-theoretically defined in terms of satisfaction. That is, it is only
-coherent to claim that the truth of a logical formula such as
+theoretically defined in terms of satisfaction. 
+% That is, it is only coherent to claim that the 
+The truth of a logical formula such as
 `$\exists xFx$' metaphysically commits one to the existence of an $F$
 if this sentence's truth is dependent upon the presence of an $x$ that
 $F$s in one's domain of discourse.  This referential interpretation of
-quantification is by no means necessary, though, as there exists an
-alternative substitutional quantifier, popularized by Saul Kripke
-\cite{kripke} and Ruth Barcan Marcus \cite{marcus72}.  The
+quantification is by no means necessary, though, as there exists 
+\cite{marcus72}\otodo{First order
+  intuitionistic logic also has that $\vdash \exists x F x \iff \vdash
+F c$ for some term $c$; I know this paper is geared towards semantics
+however I think you should note this solution to the problem
+somewhere, especially if Dutch people are going to look at this}
+an alternative substitutional quantifier, popularized by Saul Kripke
+\cite{kripke} and Ruth Barcan Marcus.  The
 substitutional quantifier defines the truth of an existentially
 quantified phrase in terms of substitution by logical constants or
 names: `$\exists xFx$' is true in a model just in case there is a
