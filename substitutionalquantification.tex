@@ -19,7 +19,16 @@
 \newcommand{\otodo}[2][]
 {\todo[caption={#2}, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
 \newcommand{\rewrite}[2][]
-{\todo[caption={#2}, color=green!40, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+{\todo[caption={#2}, color=green!40,
+  #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+\newcommand{\ftfy}[2][]
+{\todo[caption={FTFY: #2}, color=yellow,
+  #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+\newcommand{\delete}[2][]
+{\todo[caption={#2}, color=black!40,
+  #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
+\newcommand{\reorganize}[2][]
+{\todo[caption={#2}, color=blue!75, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
 \newcommand{\error}[2][]
 {\todo[caption={#2}, color=red!40, #1]{\renewcommand{\baselinestretch}{1}\selectfont#2\par}}
 \newcommand{\intodo}[2][]
@@ -30,7 +39,6 @@
 %\bibliographystyle{plainnat}
 \bibliographystyle{plain}
 
-
 \newenvironment{te}
 {\begin{singlespace}
 \begin{equation}
@@ -39,6 +47,11 @@
 \end{equation}
 \end{singlespace}
 \ignorespacesafterend}
+
+% Counters for automatically numbering counter-examples
+\newcounter{counterex}
+\setcounter{counterex}{0}
+\newcommand{\cex}{\refstepcounter{counterex}\alph{counterex}}
 
 \begin{document}
 \listoftodos\pagebreak
@@ -70,7 +83,8 @@ May 8th, 2008
   Quine would make between the formal conception of the logical
   quantifier and being.  It is an equivalence characterized by his
   criteria of ontological commitment: ``to be is to be the value of a
-  variable'' \cite[p.15]{quine}.  Corresponding to this
+  variable'' \cite[p.15]{quine}\rewrite[caption={s/criteria/criterium/g?}]{There's only one
+    \emph{criterium} being discussed in this entire paper; s/criteria/criterium/g?}.  Corresponding to this
   thesis is an appropriate methodology: ontological disagreements are
   to be resolved as semantic disputes over the implications of a
   theory's constituent statements. 
@@ -78,7 +92,7 @@ May 8th, 2008
     run on sentences. This sentence here is a little long but I don't
     see how to change it.  I'm going to try to break them up when I
     see them, and you can review and decide if my rewording sounds
-    awkward.}
+    strange/bad.}
   An interlocutor is taken to be
   ontologically committed to an entity $x$ if a sentence of the form
   ``there exists an $x$''---a sentence whose truth is supposed to
@@ -104,8 +118,7 @@ The truth of a logical formula such as
 if this sentence's truth is dependent upon the presence of an $x$ that
 $F$s in one's domain of discourse.  This referential interpretation of
 quantification is by no means necessary, though, as there exists 
-\otodo{First order
-  intuitionistic logic also has that $\vdash \exists x F x \iff \vdash
+\otodo[caption={First order intuitionistic logic?}]{First order intuitionistic logic also has that $\vdash \exists x F x \iff \vdash
 F c$ for some term $c$; I know this paper is geared towards semantics
 however I think you should note this intuitionistic, proof theoretic
 approach somewhere, especially if Dutch people are going to look at this}
@@ -122,7 +135,7 @@ scientific theories mince real and figurative discourse.  This is seen
 to be problematic for the Quinean criteria under the classical
 semantics for the quantifier.  I conclude by arguing that Quine's
 criteria may be salvaged by adopting the substitutional
-quantifier.\rewrite{This paragraph is important, so I rewrote it
+quantifier.\ftfy[caption={FTFY: rewrote entire paragraph}]{This paragraph is important, so I rewrote it
   because it wasn't clear.  In the original paragraph, I got the sense
 that you were rejecting Quine's criteria, where in reality you are
 trying to salvage it by adopting alternate semantics for quantification.}
@@ -139,11 +152,28 @@ trying to salvage it by adopting alternate semantics for quantification.}
 
 
 \section{The Quinean Criteria and its Discontents}
+\intodo[caption={Rewrite section title name?}]{This section presents
+  Quine's traditional interpretation of his criterium and
+  counter-examples refuting that perspective.  But this paper doesn't actually
+  refute Quine's criterium (ie, ``To be is to be the value of a
+  variable''), because ultimately you will salvage this idea with
+substituional quantifiers.}
 
-\rewrite{Aren't theories closed under deduction?  Also, ``theories''
-  are a proof theoretic concept; your paper is about semantics
-  so it may be prudent to caste this discussion in terms models or
-  classes of models.} Quine's criteria of ontological commitment %will be understood as a
+In this section I present Quine's traditional interpretation of his
+criteria for ontological commitment, and provide examples of sentences
+it has difficulty analyzing.\ftfy{I added an introductory sentence to
+  this section summarizing what you do in it.  Maybe elaborate?}  
+\intodo{After presenting the counter examples in this section, and the
+flaws in Quines' analysis using traditional model theory, you might
+want to return to the examples in this section to show how
+the substitutional quantifier provides the appropriate semantics.}
+\otodo[caption={Theories = collection of sentences?  What about
+  deduction?}]{Aren't theories closed under deduction?  You talk about
+  ``deriving'' things from them on the next page.  Also, ``theories''
+  are a proof theoretic concept; your paper is about semantics, however.
+  It may be prudent to caste your discussion in terms in of
+  statements ``holding'' under a theory rather than being derived.} 
+Quine's criteria of ontological commitment %will be understood as a
 is a methodological claim.  It asserts the beings that must exist as a
 consequence of a theory being true.  
 A theory will be understood as a collection of
@@ -154,9 +184,10 @@ arguments will be ignored in the present work. Perhaps theories are in
 the end more general entities, but this question is largely irrelevant
 to the present concern with understanding whether it is reasonable to
 logically question the ontological commitments of the sentences to
-which an individual adheres.\rewrite{Defending the standard, logic based understanding
-  of theories like this is not very relevant to your paper.  Delete
-  this whole paragraph?}
+which an individual adheres.
+\delete[caption={Delete this whole paragraph?}]{Defending a standard, 
+logic based understanding of theories like this is not very relevant
+to your paper.  Delete this whole paragraph?}
 
 Quine claims the following as ``a standard whereby to decide what
 ontology a given theory or form of discourse is committed to'':
@@ -167,11 +198,11 @@ that the affirmations in the theory be true \cite[p.13]{quine}.\\
 \label{ontcommit}
 \end{te}
 
-Quine takes sentences such as (a) ``there is a dog'' to be
+Quine takes sentences such as (\cex) ``there is a dog''\label{cex:dog} to be
 paradigmatic cases of ontological commitment.  This is intuitively
 plausible.  If someone posits 
 %the audacious claim that 
-(a), 
+\eqref{cex:dog}, 
 %it seems natural to take 
 they are ontologically bound to the existence of something which is a dog.
 %the speaker to some thing: a dog. It is also evident that 
@@ -179,41 +210,72 @@ The standard semantics of the
 existential quantifier can represent this sentence and its appropriate
 truth conditions in terms of dogs as `$\exists xDog(x)$'. 
 
-It is not intuitively clear, though, that this logical translation
-always clarifies the the ontological commitments at play.
+%It is not intuitively clear, though, that this 
+Logical translation does not
+always clarify the ontological commitments at play, however.
+Quine's analysis does not deal with figurative speech elegantly.
 %has contributed to or clarified (a)'s utterer's commitment to a dog. 
-It seems that the burden of ontological commitment already resided in my
-understanding of the concept expressed by `dog'.  Consider the claim
-that (s) ``there is a bee in her bonnet''. Most English-speaking
-individuals, inferring the speaker's intent and understanding the
-idiomatic proposition expressed by this sentence, would take this
-utterance to be a perhaps true claim about the obsessions of a woman
-and not presume, despite the similar logical form of this sentence and
-(a), that the speaker was committed to the existence of a bee in
-anyone's bonnet.  Quine takes it for granted that intentionally
-figurative speech is not ontologically binding, but also supposes that
-the fanciful utterance in question must be taken to be false\footnote{
+%It seems that the burden of ontological commitment already resided in
+%my understanding of the concept expressed by `dog'.  
+Consider the claim that (s) ``there is a bee in her bonnet''. 
+Most English-speaking individuals
+%, inferring the speaker's intent and 
+%understanding the idiomatic proposition expressed by this sentence, 
+would take this utterance to be a 
+%perhaps true 
+claim about some woman's obsessiveness.
+They would not consider the literal
+existence of a bee in
+anyone's bonnet.  In this way (s) is interpreted differently than (a),
+even though it has he same form.  
+Quine %takes it for granted that intentionally
+grants that figurative speech is not ontologically binding, 
+%but also supposes that the fanciful utterance in question must be
+%taken 
+by dismissing such sentences as false\footnote{
   ``One way in which a man may fail to share the ontological
-  commitments of his discourse is\ldots by taking an attitude of
+  commitments of his discourse is \ldots by taking an attitude of
   frivolity.  The parent who tells the Cinderella story is no more
   committed to admitting a fairy godmother and a pumpkin coach into
-  his own ontology than to admitting the story as true ''
-  \cite[p.103]{quine}.}. The sentence (s), though, could communicate a
-true proposition and yet it intuitively seems as though it would
-remain ontologically unburdened with anything but a girl.
+  his own ontology than to admitting the story as true''
+  \cite[p.103]{quine}.}. This is heavy handed and awkward.  
+It is intuitively possible that (s) could communicate a
+true proposition, while remaining ontologically unburdened with
+anything but the existance of some girl.  This contradicts Quine's interpretation of his
+ontological criteria. \ftfy{I heavily editted this, because it
+  used a lot of indirect language}
 
-In the above cases ontological commitment appears to be largely
-determined by the intentions of a speaker and the meaning of the
-phrases in question.  Though there is no reason yet to suppose that
+In the above cases ontological commitment 
+%appears to be largely
+is determined by the intentions of a speaker and the meaning of the
+phrases in question.  \delete[caption={Delete paragraph with run-on sentence?}]{This is a rather long run-one sentence in a
+  paragraph that isn't doing much work.  Delete all of this?} 
+Though there is no reason yet to suppose that
 intentionally figurative language exists in one's best theory of the
-world, it does demonstrates a certain intuition---that language is used
+world, it demonstrates a certain intuition---that language is used
 in many different ways and first-order logic is incapable of
 distinguishing between them---that could incline one towards a
 rejection of the Quinean criteria of ontological commitment.
+\intodo[caption={\emph{But you don't really reject Quine's
+    criterium!}}]{\emph{But you don't really reject Quine's
+    criterium!} 
+You just reject Quine's traditional first order logic
+  interpretation of his criterium.}
 
+\otodo[caption={Stay away from worrying about ``derivation'' 
+in a semantics paper}]{This paragraph begins by assuming theories involve derivation;
+  shouldn't you be explicit about this?  Why not just say ``Suppose
+  that if `there is an $x$' \textbf{holds} in a given theory then
+  \ldots''?  That way you can stick to semantics which is all this
+  paper is about.
+  Also, avoid unecessary words like ``though''.}
 Let us suppose, though, that if one can derive a literal statement of
-the form ``there is an $x$'' from a given theory then the theory is
-committed to an appropriate $x$.  As indicated in (\ref{arg1}), the
+the form
+\reorganize{This is a nice, pithy way of summarizing Quine's
+  interpretation of his ontological criterium. Why not say this at the
+  beginning of the section, and then proceed to hammer it with your counter-examples?}
+``there is an $x$'' from a given theory then the theory is committed to an appropriate $x$.
+As indicated in (\ref{arg1}), the
 typical manner of deriving such a statement when it is not explicitly
 present in a theory is through translation into a first-order language
 with standard semantics.  That is, one takes a claim such as (b)
@@ -222,10 +284,20 @@ of first-order logic such as `$WingedHorse(pegasus)$' from which, via
 existential generalization, one can derive the quantified expression
 `$\exists xWingedHorse(x)$' from which it follows, based on the
 Quinean understanding of the existential quantifier, that (c) ``there
-exists a winged horse.''
+exists a winged horse.''\rewrite{This paragraph is very confusing,
+  along with the next paragraph.  Try to make it clear that 
+``Pegasus is a winged horse'' is yet another counter-example, which
+exposes the problem with the traditional Quinian criterium as a
+problem with the semantics of first order logic. Also, be up front
+that Quine/First Order Logic are overly dimissive of (c), 
+just like the bee-bonnet sentence.}
 
 Yet it seems evident that, while (b) is true, (c) is false.  There are
-two standard responses.  First, one can follow Meinong and accept
+two standard responses.
+\reorganize{You should be up-front that you
+  are not entertaining Meinongian ontologies. Put this up at the
+  beginning of the section or in the introduction.}
+  First, one can follow Meinong and accept
 abstract or non-existent entities into their domain of discourse and
 thereby the world.  For those with nominalist leanings, this move is
 unintelligible.  Second, one can follow Quine and reject the truth of
