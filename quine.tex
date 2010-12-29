@@ -1,0 +1,209 @@
+\intodo[caption={Rewrite section title name?}]{This section presents
+  Quine's traditional interpretation of his criterium and
+  counter-examples refuting that perspective.  But this paper doesn't actually
+  refute Quine's criterium (ie, ``To be is to be the value of a
+  variable''), because ultimately you will salvage this idea with
+substituional quantifiers.}
+
+In this section I present Quine's traditional interpretation of his
+criteria for ontological commitment, and provide examples of sentences
+it has difficulty analyzing.\ftfy{I added an introductory sentence to
+  this section summarizing what you do in it.  Maybe elaborate?}  
+\intodo[caption={Return to these counter-examples later?}]{After presenting the counter examples in this section, and the
+flaws in Quines' analysis using traditional model theory, you might
+want to return to the examples in this section to show how
+the substitutional quantifier provides the appropriate semantics.}
+\otodo[caption={Theories = collection of sentences?  What about
+  deduction?}]{Aren't theories closed under deduction?  You talk about
+  ``deriving'' things from them on the next page.  Also, ``theories''
+  are a proof theoretic concept; your paper is about semantics, however.
+  It may be prudent to caste your discussion in terms in of
+  statements ``holding'' under a theory rather than being derived.} 
+Quine's criteria of ontological commitment %will be understood as a
+is a methodological claim.  It asserts the beings that must exist as a
+consequence of a theory being true.  
+A theory will be understood as a collection of
+sentences. There are objections that can be raised against this
+representation.  For example, one ought not suppose that the theory of
+relativity is tied to any particular sentential formulation. Such
+arguments will be ignored in the present work. Perhaps theories are in
+the end more general entities, but this question is largely irrelevant
+to the present concern with understanding whether it is reasonable to
+logically question the ontological commitments of the sentences to
+which an individual adheres.
+\delete[caption={Delete this whole paragraph?}]{Defending a standard, 
+logic based understanding of theories like this is not very relevant
+to your paper.  Delete this whole paragraph?}
+
+Quine claims the following as ``a standard whereby to decide what
+ontology a given theory or form of discourse is committed to'':
+\begin{te}
+A theory is committed to those and only those entities to which the
+bound variables of the theory must be capable of referring in order
+that the affirmations in the theory be true \cite[p.13]{quine}.\\
+\label{ontcommit}
+\end{te}
+
+Quine takes sentences such as (\cex) ``there is a dog''\label{cex:dog} to be
+paradigmatic cases of ontological commitment.  This is intuitively
+plausible.  If someone posits 
+%the audacious claim that 
+\eqref{cex:dog}, 
+%it seems natural to take 
+they are ontologically bound to the existence of something which is a dog.
+%the speaker to some thing: a dog. It is also evident that 
+The standard semantics of the
+existential quantifier can represent this sentence and its appropriate
+truth conditions in terms of dogs as `$\exists xDog(x)$'. 
+
+%It is not intuitively clear, though, that this 
+Logical translation does not
+always clarify the ontological commitments at play, however.
+Quine's analysis does not deal with figurative speech elegantly.
+%has contributed to or clarified (a)'s utterer's commitment to a dog. 
+%It seems that the burden of ontological commitment already resided in
+%my understanding of the concept expressed by `dog'.  
+Consider the claim that (\cex) ``there is a bee in her
+bonnet''\label{cex:bee}. 
+Most English-speaking individuals
+%, inferring the speaker's intent and 
+%understanding the idiomatic proposition expressed by this sentence, 
+would take this utterance to be a 
+%perhaps true 
+claim about some woman's obsessiveness.
+They would not consider the literal
+existence of a bee in
+anyone's bonnet.  In this way \eqref{cex:bee} is interpreted differently than \eqref{cex:dog},
+even though it has he same form.  
+Quine %takes it for granted that intentionally
+grants that figurative speech is not ontologically binding, 
+%but also supposes that the fanciful utterance in question must be
+%taken 
+by dismissing such sentences as false\footnote{
+  ``One way in which a man may fail to share the ontological
+  commitments of his discourse is \ldots by taking an attitude of
+  frivolity.  The parent who tells the Cinderella story is no more
+  committed to admitting a fairy godmother and a pumpkin coach into
+  his own ontology than to admitting the story as true''
+  \cite[p.103]{quine}.}. This is heavy handed and awkward.  
+It is intuitively possible that \eqref{cex:bee} could communicate a
+true proposition, while remaining ontologically unburdened with
+anything but the existance of some girl.  This contradicts Quine's interpretation of his
+ontological criteria. \ftfy{I heavily editted this, because it
+  used a lot of indirect language}
+
+In the above cases ontological commitment 
+%appears to be largely
+is determined by the intentions of a speaker and the meaning of the
+phrases in question.  \delete[caption={Delete paragraph with run-on sentence?}]{This is a rather long run-one sentence in a
+  paragraph that isn't doing much work.  Delete all of this?} 
+Though there is no reason yet to suppose that
+intentionally figurative language exists in one's best theory of the
+world, it demonstrates a certain intuition---that language is used
+in many different ways and first-order logic is incapable of
+distinguishing between them---that could incline one towards a
+rejection of the Quinean criteria of ontological commitment.
+\intodo[caption={\emph{But you don't really reject Quine's
+    criterium!}}]{\emph{But you don't really reject Quine's
+    criterium!} 
+You just reject Quine's traditional first order logic
+  interpretation of his criterium.}
+
+\otodo[caption={Stay away from worrying about ``derivation'' 
+in a semantics paper}]{This paragraph begins by assuming theories involve derivation;
+  shouldn't you be explicit about this?  Why not just say ``Suppose
+  that if `there is an $x$' \textbf{holds} in a given theory then
+  \ldots''?  That way you can stick to semantics which is all this
+  paper is about.
+  Also, avoid unecessary words like ``though''.}
+Let us suppose, though, that if one can derive a literal statement of
+the form
+\reorganize[caption={Put pithy summary of Quine's interpretation at
+  the beginning of the section}]{Why not say this pithy summary at the
+  beginning of the section, and then proceed to hammer it with your counter-examples?}
+``there is an $x$'' from a given theory then the theory is committed to an appropriate $x$.
+As indicated in (\ref{arg1}), the
+typical manner of deriving such a statement when it is not explicitly
+present in a theory is through translation into a first-order language
+with standard semantics.  That is, one takes a claim such as (\cex)
+``Pegasus is a winged horse''\label{cex:pegasus} and translates it into a closed formula
+of first-order logic such as `$WingedHorse(pegasus)$' from which, via
+existential generalization, one can derive the quantified expression
+`$\exists xWingedHorse(x)$' from which it follows, based on the
+Quinean understanding of the existential quantifier, that (\cex) ``there
+exists a winged horse.''\label{cex:winghorse}
+\rewrite[caption={Confusing paragraphs}]{Try to be more up front that 
+``Pegasus is a winged horse'' is yet another counter-example, which
+exposes the problem with the traditional Quinian criterium as a
+problem with the semantics of first order logic.}
+\intodo{Try to be clearer that Quine's first order logic based ontology
+  is overly dimissive of \eqref{cex:winghorse}, just like the bee-bonnet sentence.}
+
+While \eqref{cex:pegasus} is intuitively true, \eqref{cex:winghorse}
+is intuitively false.  There are
+two standard responses.
+\reorganize{You should be up-front that you
+  are not entertaining Meinongian ontologies. Put this up at the
+  beginning of the section or in the introduction.}
+  First, one can follow Meinong and accept
+abstract or non-existent entities into their domain of discourse and
+thereby the world.  For those with nominalist leanings, this move is
+unintelligible.  Second, one can follow Quine and reject the truth of
+\eqref{cex:pegasus} on the grounds that no entity exists that satisfies `$\exists
+xWingedHorse(x)$' and hence both \eqref{cex:pegasus} and \eqref{cex:winghorse} must be strictly speaking
+false.\reorganize{You need to say this up front!} If one refuses to countenance abstract objects but insists
+that \eqref{cex:pegasus} is true and \eqref{cex:winghorse} is false, some step of the preceding
+derivation must be rejected.
+
+Another counter example to Quine's reading of his criterium in first
+order logic is Marcus' (\cex) ``there is a statue of
+Venus in the Louvre''\label{cex:venus} \cite{marcus72}.  \rewrite{Assume
+Quine is a nominalist, and write that this is the obvious twist he
+would make to interpret Marcus}For the
+nominalist, \eqref{cex:venus} must
+be paraphrased to ``there is a statue named `Venus' in the Louvre"
+which suffers from a lack of inferences I take to be valid (``there is
+a statue of a Roman deity in the Louvre'') and a distortion of the
+proposition seemingly expressed by \eqref{cex:venus}: that there is a statue
+\emph{of} Venus in the Louvre.
+\reorganize{Maybe you could put all of your counter examples in one
+  block, up front, and then devote one paragraph to each?}
+
+I take the denial of these sentences' truth to be unsatisfactory.
+It omits of facts I find obvious.  
+\delete{You don't need to worry about Meinong here, so you should
+  delete this.} The acceptance of abstract entities of whatever
+caliber, though, is equally inexplicable.  
+No matter one's account of such non-existent objects, this notion will 
+constitute a more significant conflict with common sense than an 
+appeal to the cultural
+(or fictional) conventions one employs and reasons about in day-to-day
+discourse. Accounting for the truth of sentences like \eqref{cex:pegasus} and \eqref{cex:venus} as
+wholly conventional (and hence the ontological demands of such
+sentences as nonexistent) is significantly more intuitive than the
+alternative objectual interpretation.
+\otodo{This is the only important part of this paragraph}
+  That is to say, I take the
+specification of a domain $D$ for such discourse, especially in the
+murky conceptual territories in which ontological disputes arise, to
+be more mysterious than the acceptance of a fictional or conventional
+provision of truth values for sentences.
+\intodo[caption={Ignore your positive view when presenting your
+  negative view}]{Don't worry about sketching your \emph{positive}
+  view in this section too much.  This section is all about your
+  \emph{negative} view, and I would end with ``But even though it's
+  all broke, we can fix it!'' and say no more}
+
+\rewrite[caption={Weak bridge paragraph}]{This is a weak bridge
+  paragraph.  Also, don't begin paragraphs with ``this''}This is not a move towards ontological relativity (that is, I do not
+aim to advocate that what there is is a matter of convention), but
+rather the claim that the truth of a sentence need not indicate
+anything about the world but convention or, rather, that there is a
+distinction between a theory of truth and the theory of reference one
+needs to speak of ontological commitment.  The substitutional
+quantifier can help to formalize the ambiguities at play here.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "substitutionalquantification"
+%%% End: 
