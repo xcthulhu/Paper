@@ -51,7 +51,9 @@
 % Counters for automatically numbering counter-examples
 \newcounter{counterex}
 \setcounter{counterex}{0}
-\newcommand{\cex}{\refstepcounter{counterex}\alph{counterex}}
+\renewcommand{\thecounterex}{\alph{counterex}}
+\newcommand{\cex}{\refstepcounter{counterex}\thecounterex}
+\renewcommand{\labelenumi}{\theenumi}
 
 \begin{document}
 \listoftodos\pagebreak
@@ -163,7 +165,7 @@ In this section I present Quine's traditional interpretation of his
 criteria for ontological commitment, and provide examples of sentences
 it has difficulty analyzing.\ftfy{I added an introductory sentence to
   this section summarizing what you do in it.  Maybe elaborate?}  
-\intodo{After presenting the counter examples in this section, and the
+\intodo[caption={Return to these counter-examples later?}]{After presenting the counter examples in this section, and the
 flaws in Quines' analysis using traditional model theory, you might
 want to return to the examples in this section to show how
 the substitutional quantifier provides the appropriate semantics.}
@@ -217,7 +219,8 @@ Quine's analysis does not deal with figurative speech elegantly.
 %has contributed to or clarified (a)'s utterer's commitment to a dog. 
 %It seems that the burden of ontological commitment already resided in
 %my understanding of the concept expressed by `dog'.  
-Consider the claim that (s) ``there is a bee in her bonnet''. 
+Consider the claim that (\cex) ``there is a bee in her
+bonnet''\label{cex:bee}. 
 Most English-speaking individuals
 %, inferring the speaker's intent and 
 %understanding the idiomatic proposition expressed by this sentence, 
@@ -226,7 +229,7 @@ would take this utterance to be a
 claim about some woman's obsessiveness.
 They would not consider the literal
 existence of a bee in
-anyone's bonnet.  In this way (s) is interpreted differently than (a),
+anyone's bonnet.  In this way \eqref{cex:bee} is interpreted differently than \eqref{cex:dog},
 even though it has he same form.  
 Quine %takes it for granted that intentionally
 grants that figurative speech is not ontologically binding, 
@@ -239,7 +242,7 @@ by dismissing such sentences as false\footnote{
   committed to admitting a fairy godmother and a pumpkin coach into
   his own ontology than to admitting the story as true''
   \cite[p.103]{quine}.}. This is heavy handed and awkward.  
-It is intuitively possible that (s) could communicate a
+It is intuitively possible that \eqref{cex:bee} could communicate a
 true proposition, while remaining ontologically unburdened with
 anything but the existance of some girl.  This contradicts Quine's interpretation of his
 ontological criteria. \ftfy{I heavily editted this, because it
@@ -271,28 +274,29 @@ in a semantics paper}]{This paragraph begins by assuming theories involve deriva
   Also, avoid unecessary words like ``though''.}
 Let us suppose, though, that if one can derive a literal statement of
 the form
-\reorganize{This is a nice, pithy way of summarizing Quine's
-  interpretation of his ontological criterium. Why not say this at the
+\reorganize[caption={Put pithy summary of Quine's interpretation at
+  the beginning of the section}]{Why not say this pithy summary at the
   beginning of the section, and then proceed to hammer it with your counter-examples?}
 ``there is an $x$'' from a given theory then the theory is committed to an appropriate $x$.
 As indicated in (\ref{arg1}), the
 typical manner of deriving such a statement when it is not explicitly
 present in a theory is through translation into a first-order language
-with standard semantics.  That is, one takes a claim such as (b)
-``Pegasus is a winged horse'' and translates it into a closed formula
+with standard semantics.  That is, one takes a claim such as (\cex)
+``Pegasus is a winged horse''\label{cex:pegasus} and translates it into a closed formula
 of first-order logic such as `$WingedHorse(pegasus)$' from which, via
 existential generalization, one can derive the quantified expression
 `$\exists xWingedHorse(x)$' from which it follows, based on the
-Quinean understanding of the existential quantifier, that (c) ``there
-exists a winged horse.''\rewrite{This paragraph is very confusing,
-  along with the next paragraph.  Try to make it clear that 
+Quinean understanding of the existential quantifier, that (\cex) ``there
+exists a winged horse.''\label{cex:winghorse}
+\rewrite[caption={Confusing paragraphs}]{Try to be more up front that 
 ``Pegasus is a winged horse'' is yet another counter-example, which
 exposes the problem with the traditional Quinian criterium as a
-problem with the semantics of first order logic. Also, be up front
-that Quine/First Order Logic are overly dimissive of (c), 
-just like the bee-bonnet sentence.}
+problem with the semantics of first order logic.}
+\intodo{Try to be clearer that Quine's first order logic based ontology
+  is overly dimissive of \eqref{cex:winghorse}, just like the bee-bonnet sentence.}
 
-Yet it seems evident that, while (b) is true, (c) is false.  There are
+While \eqref{cex:pegasus} is intuitively true, \eqref{cex:winghorse}
+is intuitively false.  There are
 two standard responses.
 \reorganize{You should be up-front that you
   are not entertaining Meinongian ontologies. Put this up at the
@@ -301,37 +305,53 @@ two standard responses.
 abstract or non-existent entities into their domain of discourse and
 thereby the world.  For those with nominalist leanings, this move is
 unintelligible.  Second, one can follow Quine and reject the truth of
-(b) on the grounds that no entity exists that satisfies `$\exists
-xWingedHorse(x)$' and hence both (b) and (c) must be strictly speaking
-false.  If one refuses to countenance abstract objects but insists
-that (b) is true and (c) is false, some step of the preceding
+\eqref{cex:pegasus} on the grounds that no entity exists that satisfies `$\exists
+xWingedHorse(x)$' and hence both \eqref{cex:pegasus} and \eqref{cex:winghorse} must be strictly speaking
+false.\reorganize{You need to say this up front!} If one refuses to countenance abstract objects but insists
+that \eqref{cex:pegasus} is true and \eqref{cex:winghorse} is false, some step of the preceding
 derivation must be rejected.
 
-Consider, too, a sentence like Marcus' (d) ``there is a statue of
-Venus in the Louvre'' \cite{marcus72}.  For the nominalist, (d) must
+Another counter example to Quine's reading of his criterium in first
+order logic is Marcus' (\cex) ``there is a statue of
+Venus in the Louvre''\label{cex:venus} \cite{marcus72}.  \rewrite{Assume
+Quine is a nominalist, and write that this is the obvious twist he
+would make to interpret Marcus}For the
+nominalist, \eqref{cex:venus} must
 be paraphrased to ``there is a statue named `Venus' in the Louvre"
 which suffers from a lack of inferences I take to be valid (``there is
 a statue of a Roman deity in the Louvre'') and a distortion of the
-proposition seemingly expressed by (d): that there is a statue
+proposition seemingly expressed by \eqref{cex:venus}: that there is a statue
 \emph{of} Venus in the Louvre.
+\reorganize{Maybe you could put all of your counter examples in one
+  block, up front, and then devote one paragraph to each?}
 
-I take the denial of these sentences' truth to be quite unsatisfactory
-in as much as it seems to clearly indicate the omission of facts I
-find to be obvious.  The acceptance of abstract entities of whatever
-caliber, though, is equally inexplicable.  No matter one's account of
-such non-existent objects, this notion will constitute a more
-significant conflict with common sense than an appeal to the cultural
+I take the denial of these sentences' truth to be unsatisfactory.
+It omits of facts I find obvious.  
+\delete{You don't need to worry about Meinong here, so you should
+  delete this.} The acceptance of abstract entities of whatever
+caliber, though, is equally inexplicable.  
+No matter one's account of such non-existent objects, this notion will 
+constitute a more significant conflict with common sense than an 
+appeal to the cultural
 (or fictional) conventions one employs and reasons about in day-to-day
-discourse. Accounting for the truth of sentences like (b) and (d) as
+discourse. Accounting for the truth of sentences like \eqref{cex:pegasus} and \eqref{cex:venus} as
 wholly conventional (and hence the ontological demands of such
 sentences as nonexistent) is significantly more intuitive than the
-alternative objectual interpretation.  That is to say, I take the
+alternative objectual interpretation.
+\otodo{This is the only important part of this paragraph}
+  That is to say, I take the
 specification of a domain $D$ for such discourse, especially in the
 murky conceptual territories in which ontological disputes arise, to
 be more mysterious than the acceptance of a fictional or conventional
 provision of truth values for sentences.
+\intodo[caption={Ignore your positive view when presenting your
+  negative view}]{Don't worry about sketching your \emph{positive}
+  view in this section too much.  This section is all about your
+  \emph{negative} view, and I would end with ``But even though it's
+  all broke, we can fix it!'' and say no more}
 
-This is not a move towards ontological relativity (that is, I do not
+\rewrite[caption={Weak bridge paragraph}]{This is a weak bridge
+  paragraph.  Also, don't begin paragraphs with ``this''}This is not a move towards ontological relativity (that is, I do not
 aim to advocate that what there is is a matter of convention), but
 rather the claim that the truth of a sentence need not indicate
 anything about the world but convention or, rather, that there is a
@@ -349,28 +369,32 @@ countable set $C_L$ of constants, represented by `$a_1$', `$a_2$',
 each n, denoted `$R^n_1$', `$R^n_2$', \ldots, `$R^n_m$'; and the
 logical symbols `$\neg$', `$\&$', `$\exists$', `$($', and `$)$'.
 
+\error[caption={You
+  are mistaken about the semenatics of relations in first order
+  logic}]{Throughout your paper, you always talk about the semantics of
+relations in terms of sets of n elements.  This is not right.  To see
+this, assume
+$\phi(R) = \{\{a,b\}\}$. Then $\mathfrak{M}\models R(x,y)$ if and 
+only if $\mathfrak{M}\models R(y,x)$; in fact under this definition,
+all relations are symmetric}
 Recall the standard semantics for first-order logic.  A model $M$ of
 $L$ is an ordered pair $<D,\phi>$ where $D$ is a non-empty set
-constituting the domain of $M$ and $\phi$ is a mapping from elements
-of $C_L$ to $D$ and from n-ary elements of $P_L$ to the powerset of $D^n$,
-the set of all sets of n-membered subsets of $D$.  Let $V_M$ be
+constituting the domain of $M$ and $\phi$ is a maps elements
+of $C_L$ to $D$ and n-ary predicates in $P_L$ to $D^n$,
+that is the set of n-tuples of elements in $D$.  Let $V_M$ be
 recursively defined as a valuation function on $M$ such that:
 
 \begin{te}
-  $V_M(R^n_i(b_1,\ldots ,b_n)) = T$ iff $\{ \phi(b_1),\ldots ,\phi(b_n) \} \in
+  $V_M(R^n_i(b_1,\ldots ,b_n)) = T$ iff $< \phi(b_1),\ldots ,\phi(b_n) > \in
   \phi(R^n_i)$
 \label{existclause}
 \end{te}
-
 \begin{te}
   $V_M(\neg A) = T$ iff $V_M(A) = F$
 \end{te}
-
 \begin{te}
   $V_M(A \& B) = T$ iff $V_M(A) = V_M(B) = T$
-\end{te}
-
-\begin{te}
+\end{te}\begin{te}
   $V_M(\exists xA) = T$ iff $V_{M'}(A[b/x]) = T$ for some
   parameter $b$ and some $M'$ differing from $M$ in at most what it
   assigns to $b$.\\
@@ -378,19 +402,21 @@ recursively defined as a valuation function on $M$ such that:
 \end{te}
 
 It is (\ref{existclause}) that shows the referential nature of these
-semantics: `$R(a,b)$' is true in a model only if the set containing the
-extension of `$a$' and the extension of `$b$', a set containing objects
+semantics: `$R(a,b)$' is true in a model only if the pair containing
+the extension of `$a$' and the extension of `$b$', a pair of objects
 from the domain $D$, is a member of the extension of
 `$R$'. (\ref{quantifier}) in turn tells us that `$\exists xF(x)$' is true
 just in case there is some element $a \in D$ such that if $\phi(x) =
 {a}$, $F(x)$ is true.  The truth of a quantified sentence is therefore
 dependent on its satisfaction by objects in the domain of discourse $D$.
+\intodo{You need a citation for this.  I would say use Enderton, but
+  you aren't following his definition\ldots}
 
-A naive account of substitutional semantics for first-order logic
+A na\"ive account of substitutional semantics for first-order logic
 requires several modifications to the above. So as to avoid notational
 confusion, we will use the symbol $\Sigma$ to denote the
 substitutional equivalent of the existential quantifier.  The formal
-representation of naive substitutional quantification constitutes the
+representation of na\"ive substitutional quantification constitutes the
 following replacements for (\ref{existclause}) and (\ref{quantifier}):
 
 \begin{te} 
@@ -401,7 +427,6 @@ $V_M(R^n_i(b_1,\ldots ,b_n)) = T$ iff $M(R^n_i(b_1,\ldots ,b_n)) = T$
 $V_M(\Sigma xA) = T$ iff $V_{M'}(A[b/x]) = T$ for some parameter $b
 \in C_L$.\\
 \end{te} 
-
 For a substitutional language $L$, then, a model $M$ is defined
 merely as a mapping from the closed, atomic formula of $L$ to
 $\{T,F\}$.  Note that this posits the truth of an existentially
@@ -409,38 +434,67 @@ quantified formula `$\Sigma xF(x)$' as dependent only on a substitution
 instance $a$ in $L$ such that $M(F(a)) = T$; there is no talk of a
 domain $D$.
 
-This naive semantics, though, suffers from several notable
+These na\"ive semantics, though, suffers from several notable
 deficiencies.  First, the logic so described is neither compact nor
-strongly complete.  If the substitutional quantifier is to be
+strongly complete.
+\rewrite{A lot of philosophical logic isn't compact or strongly complete.
+  Specifically, hybrid logic, epistemic logic, PDL, $\mu$-calculus,
+  provability logic, counterfactual logic with the limit assumption,
+  and logics from my own research all fail to have
+  compactness or strong completeness.  These formal properties are
+  fragile and break easily. And frankly, the more elaborate semantics
+  you entertain are harder to understand than this. }
+  If the substitutional quantifier is to be
 supported for its pragmatic superiority to the objectual quantifier,
 the former ought to share most of the latter's familiar logical
 properties.
+\intodo{A lot of logicians don't care about these results at all.
+  Plenty of people use Higher Order Logic (like the Isabelle/HOL people)
+  even though it's not even weakly complete.  Restricting yourself
+  to only consider strongly complete, compact logics is really rather
+  prohibitive.}
 
 Second, such an interpretation is limited only to those terms
 contained within the substitution class of parameters $C$ and thus,
 since it cannot account for objects not already named in a language,
 cannot account for much of natural discourse.  This is to say, the
 above semantics can only discuss domains that are countable and named.
+\error{The upward L\"owenheim Skolem theorem says different?}
 While we are interested in this quantifier for its ability to move us
 past logical questions of ontological obligation, it must be capable
 of representing discourse that makes recourse to uncountable domains,
-for example science and mathematics. That is, the substitutional
+for example science and mathematics.
+\otodo{If you are going to worry about expressiveness, you
+  should mention at some point that FOL is embeddable in the logic for
+  substitutional semantics (maybe you could sketch a proof in an appendix?)}
+ The substitutional
 quantifier must be at least as expressive as the standard existential
 quantifier.
 
-Marcus \cite{marcus95} suggests that, if this second objection is legitimate,
+\reorganize{This paragraph is confusing.}Marcus \cite{marcus95} suggests that, if this second objection is legitimate,
 first-order logic with objectual quantification does not fare much
-better given the Lowenheim-Skolem theorem.  Recall that if a theory
+better given the downward L\"owenheim-Skolem theorem.  Recall that if a theory
 $T$ in a first-order language is satisfiable by an uncountable domain
 then there exists a model $M'$ with a countable domain $D'$ that also
 satisfies the sentences of $T$.  This result applies to the
 first-order theory of real analysis that one would assume to be
 satisfiable only by a domain with cardinality at least equal to that
-of the real numbers. Consider now this model $M'$.  Since $D'$ is
+of the real numbers. \rewrite{Real analysis isn't a first order
+  theory.  You cannot express the least upper bound principle in first
+  order logic.}
+Consider now this model $M'$.  Since $D'$ is
 enumerable, a name can be provided for every object contained therein.
 Therefore, if we let the parameters of a substitutional language $L$
 be the names of objects in $D'$, we can construct a substitutional
 model for $L$ according to $M'$ that satisfies $T$.
+\intodo{Most model theorists don't restrict themselves to countable
+  languages.  Theorems like Henkin's strong completeness, compactness,
+  the L\"owenheim-Skolem theorems, can all be generalized to higher
+  cardinalities using transfinite induction and lots of applications
+  of the axiom of choice.  So really, you can just say ``There is some
+substitutional language $L$ that models the first order theory of
+$\mathbb{R}$'' without making smaller but elementarily equivalent 
+models or anything like that.}
 
 As this response only addresses one of the complaints levied against
 substitutional quantification, an alternative semantics provided by
